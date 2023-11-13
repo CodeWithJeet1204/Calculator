@@ -1,7 +1,7 @@
 import 'package:calculator/home_page.dart';
 import 'package:provider/provider.dart';
 
-import 'calculator_page.dart';
+import 'calculator/calculator_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

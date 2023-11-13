@@ -1,5 +1,5 @@
-import 'package:calculator/calculator_page.dart';
-import 'package:calculator/others_page.dart';
+import 'package:calculator/calculator/calculator_page.dart';
+import 'package:calculator/conversion_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
