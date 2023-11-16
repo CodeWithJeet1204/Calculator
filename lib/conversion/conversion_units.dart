@@ -29,10 +29,10 @@ Map<String, List<String>> conversionUnits = {
   ],
   "Currency": [
     "US Dollar (\$)",
+    "Indian Rupees (₹)",
     "Euro (€)",
     "British Pound (£)",
     "Japanese Yen (¥)",
-    "Chinese Yuan (¥)"
   ],
   "Weight": [
     "Kilogram (kg)",

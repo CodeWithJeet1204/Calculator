@@ -1,3 +1,4 @@
+import 'package:calculator/conversion/conversion_logic.dart';
 import 'package:calculator/conversion/conversion_units.dart';
 import 'package:flutter/material.dart';
 
@@ -20,13 +21,49 @@ class IndividualConversionPage extends StatefulWidget {
 
 class _IndividualConversionPageState extends State<IndividualConversionPage> {
   TextEditingController convertController = TextEditingController();
+  double value = 0;
+  late String firstSelectedValue;
+  late String secondSelectedValue;
+
+  @override
+  void initState() {
+    super.initState();
+    firstSelectedValue = conversionUnits[widget.conversionTitle]![4];
+    secondSelectedValue = conversionUnits[widget.conversionTitle]![0];
+  }
+
+  void convertParameter() {
+    print(firstSelectedValue);
+    print(secondSelectedValue);
+    print(value);
+    if (widget.conversionTitle == "Length") {
+      convertlength(value, firstSelectedValue, secondSelectedValue);
+      setState(() {});
+    }
+    if (widget.conversionTitle == "Area") {
+      convertarea(value, firstSelectedValue, secondSelectedValue);
+      setState(() {});
+    }
+    if (widget.conversionTitle == "Volume") {
+      convertvolume(value, firstSelectedValue, secondSelectedValue);
+      setState(() {});
+    }
+    if (widget.conversionTitle == "Temperature") {
+      convertvolume(value, firstSelectedValue, secondSelectedValue);
+      setState(() {});
+    }
+    if (widget.conversionTitle == "Weight") {
+      convertweight(value, firstSelectedValue, secondSelectedValue);
+      setState(() {});
+    }
+    if (widget.conversionTitle == "Currency") {
+      convertcurrency(value, firstSelectedValue, secondSelectedValue);
+      setState(() {});
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    // ignore: unused_local_variable
-    String? firstSelectedValue = conversionUnits[widget.conversionTitle]![0];
-    // ignore: unused_local_variable
-    String? secondSelectedValue = conversionUnits[widget.conversionTitle]![0];
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.conversionTitle),
@@ -52,7 +89,7 @@ class _IndividualConversionPageState extends State<IndividualConversionPage> {
                         DropdownMenu<String>(
                           onSelected: (String? newValue) {
                             setState(() {
-                              firstSelectedValue = newValue;
+                              firstSelectedValue = newValue!;
                             });
                           },
                           width: 150,
@@ -102,7 +139,7 @@ class _IndividualConversionPageState extends State<IndividualConversionPage> {
                         DropdownMenu<String>(
                           onSelected: (String? newValue) {
                             setState(() {
-                              secondSelectedValue = newValue;
+                              secondSelectedValue = newValue!;
                             });
                           },
                           width: 150,
@@ -175,12 +212,32 @@ class _IndividualConversionPageState extends State<IndividualConversionPage> {
               foregroundColor: const Color.fromARGB(255, 3, 65, 182),
               fixedSize: const Size(150, 45),
             ),
-            onPressed: () {},
+            onPressed: convertParameter,
             child: const Text(
               "Convert",
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 24),
+            child: Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 205, 232, 255),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              width: double.infinity,
+              height: 100,
+              child: Text(
+                value.toString(),
+                style: const TextStyle(
+                  fontSize: 52,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 1, 41, 73),
+                ),
               ),
             ),
           ),
