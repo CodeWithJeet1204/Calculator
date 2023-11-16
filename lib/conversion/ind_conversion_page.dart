@@ -32,33 +32,35 @@ class _IndividualConversionPageState extends State<IndividualConversionPage> {
     secondSelectedValue = conversionUnits[widget.conversionTitle]![0];
   }
 
-  void convertParameter() {
+  double convertParameter() {
     print(firstSelectedValue);
     print(secondSelectedValue);
     print(value);
     if (widget.conversionTitle == "Length") {
-      convertlength(value, firstSelectedValue, secondSelectedValue);
       setState(() {});
+      return convertlength(value, firstSelectedValue, secondSelectedValue);
     }
     if (widget.conversionTitle == "Area") {
-      convertarea(value, firstSelectedValue, secondSelectedValue);
       setState(() {});
+      return convertarea(value, firstSelectedValue, secondSelectedValue);
     }
     if (widget.conversionTitle == "Volume") {
-      convertvolume(value, firstSelectedValue, secondSelectedValue);
       setState(() {});
+      return convertvolume(value, firstSelectedValue, secondSelectedValue);
     }
     if (widget.conversionTitle == "Temperature") {
-      convertvolume(value, firstSelectedValue, secondSelectedValue);
       setState(() {});
+      return convertvolume(value, firstSelectedValue, secondSelectedValue);
     }
     if (widget.conversionTitle == "Weight") {
-      convertweight(value, firstSelectedValue, secondSelectedValue);
       setState(() {});
+      return convertweight(value, firstSelectedValue, secondSelectedValue);
     }
     if (widget.conversionTitle == "Currency") {
-      convertcurrency(value, firstSelectedValue, secondSelectedValue);
       setState(() {});
+      return convertcurrency(value, firstSelectedValue, secondSelectedValue);
+    } else {
+      return 0;
     }
   }
 

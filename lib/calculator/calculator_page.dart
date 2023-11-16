@@ -145,7 +145,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
         children: [
           Container(
             alignment: Alignment.bottomRight,
-            height: 144,
+            height: 203,
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.only(

@@ -1,5 +1,5 @@
 import 'package:calculator/calculator/calculator_page.dart';
-import 'package:calculator/conversion/conversion_page.dart';
+// import 'package:calculator/conversion/conversion_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
+  // int _selectedIndex = 0;
   Widget currentPage = const CalculatorPage();
 
   @override
@@ -18,33 +18,33 @@ class _HomePageState extends State<HomePage> {
     // Get the current page.
     Widget content = currentPage;
 
-    // Rebuild the bottom navigation bar.
-    final bottomNavigationBar = BottomNavigationBar(
-      currentIndex: _selectedIndex,
-      onTap: (value) {
-        // Set the current page to the page that corresponds to the tapped item.
-        setState(() {
-          _selectedIndex = value;
-          currentPage =
-              _selectedIndex == 0 ? const CalculatorPage() : const OthersPage();
-        });
-      },
-      selectedItemColor: const Color.fromARGB(255, 4, 79, 141),
-      items: const [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: "Home",
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.calculate),
-          label: "Others",
-        ),
-      ],
-    );
+    // // Rebuild the bottom navigation bar.
+    // final bottomNavigationBar = BottomNavigationBar(
+    //   currentIndex: _selectedIndex,
+    //   onTap: (value) {
+    //     // Set the current page to the page that corresponds to the tapped item.
+    //     setState(() {
+    //       _selectedIndex = value;
+    //       currentPage =
+    //           _selectedIndex == 0 ? const CalculatorPage() : const OthersPage();
+    //     });
+    //   },
+    //   selectedItemColor: const Color.fromARGB(255, 4, 79, 141),
+    //   items: const [
+    //     BottomNavigationBarItem(
+    //       icon: Icon(Icons.home),
+    //       label: "Home",
+    //     ),
+    //     BottomNavigationBarItem(
+    //       icon: Icon(Icons.calculate),
+    //       label: "Others",
+    //     ),
+    //   ],
+    // );
 
     return Scaffold(
       body: content,
-      bottomNavigationBar: bottomNavigationBar,
+      // bottomNavigationBar: bottomNavigationBar,
     );
   }
 }
